@@ -1,0 +1,52 @@
+
+
+
+{%extends 'rift_edge.html'%}
+
+{%block title%} Password Reset {%endblock%}
+
+
+{%block content%}
+
+
+    <!-- Container -->
+    <div class="container mx-auto font-mono ">
+        <div class="flex justify-center px-6 my-12">
+            <!-- Row -->
+            <div class="w-full xl:w-3/4 lg:w-11/12 flex">
+                <!-- Col -->
+                <div
+    class="w-full h-auto bg-gray-400 hidden lg:block lg:w-1/2 bg-cover rounded-l-lg"
+    style="background-image: url('https://images.unsplash.com/photo-1603539279542-e7cf76a92801?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); border: 2px solid;"
+></div>
+
+                <!-- Col -->
+                <div class="w-full lg:w-1/2 bg-white p-5 rounded-lg lg:rounded-l-none">
+                    <div class="px-8 mb-4 text-center">
+                        <h3 class="pt-4 mb-2 text-2xl">Password reset complete</h3>
+                        
+
+                        <p class="mb-4 text-sm text-gray-700">
+                            
+                            Your password has been set. You may go ahead and log in now.
+                        </p>
+                        <br>
+                    
+                     
+                        
+
+                        <button
+                        class="w-full px-4 py-2 font-bold text-white bg-red-500 rounded-full hover:bg-red-700 focus:outline-none focus:shadow-outline"
+                        type="submit"
+                    >
+                    <a href="{% url 'mylogin' %}"> Login Now!</a>
+                        
+                    </button>
+                    </div>
+                         
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    {%endblock%}

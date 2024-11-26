@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <title>Form Data</title>
+</head>
+<body>
+
+<!-- <form  method="post"  align="center">
+    {% csrf_token  %}
+    <label>Name</label>
+    <input type="text" placeholder="Enter FirstName" name="n" value="{{std.name}}"  > <br>
+    <label>Age</label>
+    <input type="number" placeholder="Enter Age" name="a" value="{{std.age}}"><br>
+    <label>Marks</label>
+    <input type="number" placeholder="Enter Marks" name="m" value="{{std.marks}}"><br>
+    <label>Courses</label>
+    <input type="text" placeholder="Enter Course" name="c" value="{{std.course}}"><br>
+
+    <input type="submit" value="Save" >
+
+
+
+</form> -->
+
+
+<form method="post">
+    {% csrf_token %}
+    {{fmovie}}
+<input type="submit" value="Save" >
+
+</form>
+
+<br>
+<hr>
+    
+</body>
+</html>

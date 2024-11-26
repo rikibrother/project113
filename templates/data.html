@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <title>Data</title>
+</head>
+<!-- <body style="background: linear-gradient(to right, lightcoral);">
+     -->
+     
+     <body style="background: linear-gradient(to right, rgb(143, 158, 176), rgb(180, 145, 170), rgb(157, 118, 118));">
+
+<!-- {{name.1}}
+{{age}}
+{{marks}}
+
+
+
+
+{% if age > 18 %}
+
+<h3>You are Adult!</h3>
+
+{% else %}
+
+<h3>You are Teenager!</h3>
+
+{% endif %} -->
+<br><br>
+
+    <br><br>
+<form  method="post"  align="center" action="{% url 'formdata'%}">
+    {% csrf_token  %}
+    <label>Name</label>
+    <input type="text" placeholder="Enter FirstName" name="n">
+    <label>Age</label>
+    <input type="number" placeholder="Enter Age" name="a">
+    <label>Marks</label>
+    <input type="number" placeholder="Enter Marks" name="m">
+    <label>Courses</label>
+    <input type="text" placeholder="Enter Course" name="c">
+
+    <input type="submit" value="Save" >
+
+
+
+</form>
+<br>
+<hr>
+<br>
+
+
+<table border="5", cellspacing="5", cellpadding="5" align="center" style="background-color: bisque;">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Marks</th>
+        <th>Adult</th>
+        <th>Course</th>
+        <th>Action</th>
+
+
+    </tr>
+    {%for std in stds %}
+    <tr>
+        <td>{{std.pk}}</td>
+        <td>{{std.name}}</td>
+        <td>{{std.age}}</td>
+        <td>{{std.marks}}</td>
+        {%if std.age > 18 %}
+        <td>True</td>
+        {%else%}
+
+        <td>False</td>
+        {%endif%}
+        <td>{{std.course}}</td>
+        <td>
+            <a href="{%url 'delete' std.pk %}" onclick="return confirm('Are You Sure?')">DELETE</a>
+            <a href="{%url 'update' std.pk %}">UPDATE</a>
+        </td>
+
+
+
+
+
+
+    </tr>
+    {% endfor %}
+
+
+
+
+
+</table>
+
+
+
+</body>
+</html>

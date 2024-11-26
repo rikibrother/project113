@@ -1,0 +1,314 @@
+steps to create new project
+
+
+>choose a folder where you want to make project 
+> run in terminal after opening folder
+'python -m venv myvenv'
+
+>activate this virtual envirnment by following query in terminal
+'myvenv/scripts/activate'
+
+virtual envirnment will open
+
+>in terminal 
+1. install django
+
+2. django-admin startproject mypro
+3.cd mypro (project folder will open)
+
+python manage.py runserver will test server on django default page
+
+4. python manage.py startapp myapp
+5. copy url.py from project to app (delete url in app urls)
+6. in setting.py add app name in installed apps
+7. creates templates folder in project main folder 
+8. add path of templates folder in setting.py templates 
+9. in project url include path of mapp urls
+10. add/copy all html and css files in that folder
+
+11. in view add http responses 
+
+
+11. python manage.py runserver to view front end
+
+
+xx.python manage.py createsuperuser to create admin for server
+
+xxx.after setting up whole project and signup page to encode user id in activation email link "pip install pyjwt"
+
+
+
+
+Lecture09_Serializers_Jason API-prt1 (Get & POST)
+
+10-nov notes api_view(['GET', 'POST'])
+
+
+1. pip install djangorestframework run this command
+2. make file in my project with name serializers.py
+3. in serializer file import model from datafiles (like movie) and serializer from rest_framework 
+    i.e.
+    from .models import Movie
+    from rest_framework import serializers
+4. also add class in serializer.py
+class Movieserializer(serializers.ModelSerializer):
+    class Meta:
+        model = Movie
+        fields = '__all__'
+
+
+5. add 'rest_framework', installed apps
+6. add following in views.py
+
+from .models import Movie
+from .serializers import Movieserializer
+from django.http import JsonResponse
+from rest_framework.response import Response
+from rest_framework.decorators import api_view
+
+
+@api_view(['GET', 'POST'])
+def movie_data(request):
+    if request.method == 'GET':
+        data = Movie.objects.all()
+        sr = Movieserializer(data, many=True)
+        # return JsonResponse(sr.data, safe=False)
+        return Response(sr.data)
+    if request.method == 'POST':
+        sr = Movieserializer(data=request.data)
+        if sr.is_valid():
+            sr.save()
+            data = Movie.objects.all()
+        sr = Movieserializer(data, many=True)
+        # return JsonResponse(sr.data, safe=False)
+        return Response(sr.data)
+    
+    # after this we can test post request is running or not by opening url and adding additional entry
+
+7. add following in urls.py
+
+
+    path('moviedata/', views.movie_data, name="moviedata"),
+
+
+8. pip install requests
+and add following in tests.py to test API
+
+
+from django.test import TestCase
+import requests
+# Create your tests here.
+
+
+data = requests.get('http://127.0.0.1:8000/moviedata/')
+
+# print(data.content)
+print(data.status_code)
+
+this helps to identify if api is ok status code help to identify status i.e. 2xx is code that there is no error 
+
+
+
+
+Lecture10_ApiView_prt2_ PUT & Delete__StatusCodes_Permissions
+Notes 16 nov
+api_view(['PUT', 'delete'])
+
+
+1. url.py add url for put, delete
+
+    path('updatemoviedata/<int:id>/', views.update_movie_data, name="updatemoviedata"),
+
+2. add following view in views.py
+
+>this code will help to put(update) or delete  data we can test it by url/updatemoviedata/id where url will be site url and id will be id of object
+opening above url which show signle oject copy it , past in below box and click put after making changings , chagings will be saved wich can be recheck by refreshing page
+similary if a obj is opened though above url we can click delete to delete it.
+
+> This code also help to import and change error codes for better understanding of user.
+
+
+
+from rest_framework import status
+from rest_framework.decorators import permission_classes
+from rest_framework.permissions import AllowAny, IsAuthenticated, IsAuthenticatedOrReadOnly
+
+
+@api_view(['GET', 'PUT', 'DELETE'])
+@permission_classes([IsAuthenticated])
+def update_movie_data(request, id):
+    try:
+        movie_obj = Movie.objects.get(pk=id)
+    except:
+        return Response({'detail': f'Movie object not found'}, status= status.HTTP_404_NOT_FOUND)
+    
+    if request.method == 'GET':
+        sr = Movieserializer(movie_obj, status= status.HTTP_302_FOUND)
+        return Response(sr.data)
+    
+    if request.method == 'PUT':
+        sr = Movieserializer(movie_obj, data= request.data)
+        if sr.is_valid():
+            sr.save()
+            return Response(sr.data, status=status.HTTP_200_OK)
+        else:
+            return Response({'detail': f'Movie data is not Valid {sr.errors}'}, status=status.HTTP_406_NOT_ACCEPTABLE)
+        
+    
+    if request.method == 'DELETE':
+        movie_obj.delete()
+        return Response({'detail': f'Movie object not found or may be deleted'}, status=status.HTTP_204_NO_CONTENT)
+
+
+
+
+
+
+Lecture11_
+Notes 17 nov
+
+now do working for jwt simple rest_framework, below work is take from 
+https://django-rest-framework-simplejwt.readthedocs.io/en/latest/getting_started.html
+
+
+1. pip install djangorestframework-simplejwt run this command
+2. in setting.py add 
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISION_CLASSES': (
+        'rest_framework_permissions.isAuthenticated',
+    ),
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    )
+}
+
+from datetime import timedelta
+
+# SIMPLE_INT = {
+#     'ACCESS_TOKEN_LIFETIME': timedelta(minutes=60),
+    
+# }
+
+3. in setting.py installed app add 
+'rest_framework_simplejwt',
+'rest_framework_simplejwt.token_blacklist',
+
+
+
+4. run migrations
+python manage.py migrate
+python manage.py makemigrations
+
+
+
+5. in urls import
+from rest_framework_simplejwt.views import (TokenObtainPairView,TokenRefreshView)
+
+add urlpatterns (taken from above link opened in strt of lecture)
+
+path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+
+
+6. in postman test API by ...
+
+
+7. make a file with Name api.py in myapp folder and add following 
+
+from rest_framework.views import APIView
+from rest_framework.permissions import AllowAny, IsAuthenticated
+from rest_framework_simplejwt.authentication import JWTAuthentication
+from rest_framework_simplejwt.tokens import RefreshToken, OutstandingToken
+from rest_framework.exceptions import NotAuthenticated
+from rest_framework.decorators import api_view, permission_classes
+from rest_framework.response import Response
+
+
+
+class UserAPI(APIView):
+    authentication_classes = [JWTAuthentication]
+    permission_classes = [AllowAny]
+    
+    
+    def get (self, request):
+        user = request.user
+        
+        
+        if not user.is_authenticated:
+            raise NotAuthenticated()
+        
+        return Response({
+            "username": user.username,
+            "first_name": user.first_name,
+            "last_name": user.last_name,
+            "email": user.email,
+            
+        })
+
+8. in urls. py import
+from . import api
+
+and add following urlpatterns
+
+path('api/user/', api.UserAPI.as_view()),
+
+
+9. in api.py import
+from django.contrib.auth.models import User
+
+and continue code of 7 step as 
+
+def post(self, request):
+        username = request.data.get('username', '')
+        password = request.data.get('password', '')
+        
+        if username and password:
+            if User.objects.filter(username=username).exists():
+                return Response({"error": "User already exists"}, status=401)
+            
+            user = user.objects.create_user(username=username, password=password)
+            
+            refresh = RefreshToken.for_user(user)
+            return Response({
+                "refresh": str(refresh),
+                "access": str(refresh.access_token),
+            },status=201)
+            
+        return Response({"error": "username and password must be provided"}, status=400)
+
+
+>further add
+
+
+@api_view(['POST'])
+@permission_classes([IsAuthenticated])
+def logout(request):
+    refresh_token = request.data.get('refresh')
+    
+    if refresh_token:
+        try:
+            token = RefreshToken(refresh_token)
+            token.blacklist()
+            return Response({"message": "Successfully Logged out!"}, status=200)
+        except Exception as e:
+            return Response({"error": "Invalid token."}, status=400)
+    else:
+        return Response({"error": "Refresh toke is required."}, status=400)
+
+>in urlpatterns add
+path("api/logout/", api.logout),
+
+
+
+
+
+lecture 12, GIT & python everywhere uploading project
+notes NOV 23 
+
+
+1. in vs click on source control available in extreme left menu, clock on link to download git for windows, download and install it after clicking next on each step.
+2. making git reuphostery 
+
+3. through google open python everywhere, create accout and after verifying email go to dashboard. 
+
+4. on VS pip freeze requirements.txt this will give us list of requiements we need to install on python every where (This can give error of JWTAuthentication or vnv solve it though chat GPYT if needed)

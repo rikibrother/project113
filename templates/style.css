@@ -1,0 +1,8 @@
+
+
+body {
+    /* background-image: url("https://media.istockphoto.com/id/1276532557/photo/abs-fabric-drape-bg.jpg?s=1024x1024&w=is&k=20&c=uZuvoQlI5AjmJx9W_v22r5COcpdwWWNJ7TBjz978xr8="); */
+    /* background-repeat: no-repeat; */
+    background-image: linear-gradient(rgb(208, 168, 168), rgb(177, 177, 88));
+    background-size: cover
+  }

@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>{%block title%}Rift Edge {%endblock%}</title>
+</head>
+
+    
+
+<body>
+    <header class="text-gray-600 body-font">
+        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+          <nav class="flex lg:w-2/5 flex-wrap items-center text-base md:ml-auto ">
+            <a class="mr-5 hover:text-yellow-100" href="{% url 'admin_panel'%}" >Home</a>
+            <a class="mr-5 hover:text-gray-900">About</a>
+            <a class="mr-5 hover:text-gray-900">Contact-Us</a>
+            <a class="hover:text-gray-900">Services</a>
+          </nav>
+          <a class="flex order-first lg:order-none lg:w-1/5 title-font font-medium items-center text-gray-900 lg:items-center lg:justify-center mb-4 md:mb-0">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+            </svg>
+            <span class="ml-3 text-xl">Rift Edge</span>
+          </a>
+          <div class="lg:w-2/5 inline-flex lg:justify-end ml-5 lg:ml-0">
+            <button class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0"><a href="{% url 'mylogin' %}">Log in</a>
+              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
+                <path d="M5 12h14M12 5l7 7-7 7"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      {%block content%}
+      <section class="text-gray-600 body-font">
+        <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
+          <div class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
+            <h1 class="title-font sm:text-5xl text-5xl mb-4 font-medium text-blue-900 ">We Provide Website Solution</h1>
+            <p class="mb-8 leading-relaxed">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni, doloremque!.</p>
+            <div class="flex w-full md:justify-start justify-center items-end">
+              <div class="relative mr-4 md:w-full lg:w-full xl:w-1/2 w-2/4">
+                <label for="hero-field" class="leading-7 text-sm text-gray-600" >Email</label>
+                <input type="text" id="hero-field" name="hero-field" class="w-full bg-gray-100 rounded border bg-opacity-50 border-gray-300 focus:ring-2 focus:ring-indigo-200 focus:bg-transparent focus:border-indigo-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+              </div>
+              <button class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-yellow-600 rounded text-lg">Submit</button>
+            </div>
+            <p class="text-sm mt-2 text-black-200 mb-8 w-full">Provide email for regular use.</p>
+            <div class="flex lg:flex-row md:flex-col">
+              <button class="bg-gray-100 inline-flex py-3 px-5 rounded-lg items-center hover:bg-gray-200 focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-6 h-6" viewBox="0 0 512 512">
+                  <path d="M99.617 8.057a50.191 50.191 0 00-38.815-6.713l230.932 230.933 74.846-74.846L99.617 8.057zM32.139 20.116c-6.441 8.563-10.148 19.077-10.148 30.199v411.358c0 11.123 3.708 21.636 10.148 30.199l235.877-235.877L32.139 20.116zM464.261 212.087l-67.266-37.637-81.544 81.544 81.548 81.548 67.273-37.64c16.117-9.03 25.738-25.442 25.738-43.908s-9.621-34.877-25.749-43.907zM291.733 279.711L60.815 510.629c3.786.891 7.639 1.371 11.492 1.371a50.275 50.275 0 0027.31-8.07l266.965-149.372-74.849-74.847z"></path>
+                </svg>
+                <span class="ml-4 flex items-start flex-col leading-none">
+                  <span class="text-xs text-gray-600 mb-1">GET IT ON</span>
+                  <span class="title-font font-medium">Google Play</span>
+                </span>
+              </button>
+              <button class="bg-gray-100 inline-flex py-3 px-5 rounded-lg items-center lg:ml-4 md:ml-0 ml-4 md:mt-4 mt-0 lg:mt-0 hover:bg-gray-200 focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-6 h-6" viewBox="0 0 305 305">
+                  <path d="M40.74 112.12c-25.79 44.74-9.4 112.65 19.12 153.82C74.09 286.52 88.5 305 108.24 305c.37 0 .74 0 1.13-.02 9.27-.37 15.97-3.23 22.45-5.99 7.27-3.1 14.8-6.3 26.6-6.3 11.22 0 18.39 3.1 25.31 6.1 6.83 2.95 13.87 6 24.26 5.81 22.23-.41 35.88-20.35 47.92-37.94a168.18 168.18 0 0021-43l.09-.28a2.5 2.5 0 00-1.33-3.06l-.18-.08c-3.92-1.6-38.26-16.84-38.62-58.36-.34-33.74 25.76-51.6 31-54.84l.24-.15a2.5 2.5 0 00.7-3.51c-18-26.37-45.62-30.34-56.73-30.82a50.04 50.04 0 00-4.95-.24c-13.06 0-25.56 4.93-35.61 8.9-6.94 2.73-12.93 5.09-17.06 5.09-4.64 0-10.67-2.4-17.65-5.16-9.33-3.7-19.9-7.9-31.1-7.9l-.79.01c-26.03.38-50.62 15.27-64.18 38.86z"></path>
+                  <path d="M212.1 0c-15.76.64-34.67 10.35-45.97 23.58-9.6 11.13-19 29.68-16.52 48.38a2.5 2.5 0 002.29 2.17c1.06.08 2.15.12 3.23.12 15.41 0 32.04-8.52 43.4-22.25 11.94-14.5 17.99-33.1 16.16-49.77A2.52 2.52 0 00212.1 0z"></path>
+                </svg>
+                <span class="ml-4 flex items-start flex-col leading-none">
+                  <span class="text-xs text-gray-600 mb-1">Download on the</span>
+                  <span class="title-font font-medium">App Store</span>
+                </span>
+              </button>
+            </div>
+          </div>
+          <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
+            <img class="object-cover object-center rounded" alt="hero" src="https://plus.unsplash.com/premium_photo-1663040543387-cb7c78c4f012?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8d2Vic2l0ZSUyMGRldmVsb3BlcnxlbnwwfHwwfHx8MA%3D%3D">
+          </div>
+        </div>
+      </section>
+      <section class="text-gray-600 body-font">
+        <div class="container px-5 py-24 mx-auto">
+          <div class="flex flex-col">
+            <div class="h-1 bg-gray-200 rounded overflow-hidden">
+              <div class="w-24 h-full bg-indigo-500"></div>
+            </div>
+            <div class="flex flex-wrap sm:flex-row flex-col py-6 mb-12">
+              <h1 class="sm:w-2/5 text-gray-900 font-medium title-font text-2xl mb-2 sm:mb-0">Services</h1>
+              <p class="sm:w-3/5 leading-relaxed text-base sm:pl-10 pl-0">We Provide Multiple Services. Following are some of our popular services</p>
+            </div>
+          </div>
+          <div class="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4">
+            <div class="p-4 md:w-1/3 sm:mb-0 mb-6">
+              <div class="rounded-lg h-64 overflow-hidden">
+                <img alt="content" class="object-cover object-center h-full w-full" src="https://plus.unsplash.com/premium_photo-1678566154673-a728037f3f00?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8d2ViJTIwZGV2ZWxvcG1lbnR8ZW58MHx8MHx8fDA%3D">
+              </div>
+              <h2 class="text-xl font-medium title-font text-gray-900 mt-5">Web Development</h2>
+              <p class="text-base leading-relaxed mt-2">Swag shoivdigoitch literally meditation subway tile tumblr cold-pressed. Gastropub street art beard dreamcatcher neutra, ethical XOXO lumbersexual.</p>
+              <a class="text-indigo-500 inline-flex items-center mt-3">Web Designing
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                  <path d="M5 12h14M12 5l7 7-7 7"></path>
+                </svg>
+              </a>
+            </div>
+            <div class="p-4 md:w-1/3 sm:mb-0 mb-6">
+              <div class="rounded-lg h-64 overflow-hidden">
+                <img alt="content" class="object-cover object-center h-full w-full" src="https://media.istockphoto.com/id/1976099664/photo/artificial-intelligence-processor-concept-ai-big-data-array.webp?a=1&b=1&s=612x612&w=0&k=20&c=H785hZU33rYNjGsiRuN5q2UleUxp4H7W2IMgkq8gXUQ=">
+              </div>
+              <h2 class="text-xl font-medium title-font text-gray-900 mt-5">AI Development</h2>
+              <p class="text-base leading-relaxed mt-2">Swag shoivdigoitch literally meditation subway tile tumblr cold-pressed. Gastropub street art beard dreamcatcher neutra, ethical XOXO lumbersexual.</p>
+              <a class="text-indigo-500 inline-flex items-center mt-3">Learn More
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                  <path d="M5 12h14M12 5l7 7-7 7"></path>
+                </svg>
+              </a>
+            </div>
+            <div class="p-4 md:w-1/3 sm:mb-0 mb-6">
+              <div class="rounded-lg h-64 overflow-hidden">
+                <img alt="content" class="object-cover object-center h-full w-full" src="https://media.istockphoto.com/id/1213781338/photo/digital-artist-working-at-home.webp?a=1&b=1&s=612x612&w=0&k=20&c=OktcIYvuqTIADgHc5nTmGPXU1kEhbgFX6yqzgOnT_cI=">
+              </div>
+              <h2 class="text-xl font-medium title-font text-gray-900 mt-5">Web Designing</h2>
+              <p class="text-base leading-relaxed mt-2">Swag shoivdigoitch literally meditation subway tile tumblr cold-pressed. Gastropub street art beard dreamcatcher neutra, ethical XOXO lumbersexual.</p>
+              <a class="text-indigo-500 inline-flex items-center mt-3">Learn More
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                  <path d="M5 12h14M12 5l7 7-7 7"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- component -->
+<div class="py-12 px-4 md:px-6 2xl:px-0 2xl:container 2xl:mx-auto flex justify-center items-center">
+    <!--- more free and premium Tailwind CSS components at https://tailwinduikit.com/ --->
+     <div class="flex flex-col justify-start items-start w-full space-y-8">
+         <div class="flex justify-start items-start">
+             <p class="text-3xl lg:text-4xl font-semibold leading-7 lg:leading-9 text-gray-800 dark:text-white ">Reviews</p>
+         </div>
+         <div class="w-full flex justify-start items-start flex-col bg-gray-50 dark:bg-gray-800 p-8">
+             <div class="flex flex-col md:flex-row justify-between w-full">
+                 <div class="flex flex-row justify-between items-start">
+                     <p class="text-xl md:text-2xl font-medium leading-normal text-gray-800 dark:text-white">Beautiful addition to the theme</p>
+                     <button onclick="showMenu(true)" class="ml-4 md:hidden">
+                         <svg id="closeIcon" class="hidden" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                             <path d="M15 12.5L10 7.5L5 12.5" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
+                         </svg>
+                         <svg id="openIcon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                             <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
+                         </svg>
+                     </button>
+                 </div>
+                 <div class="cursor-pointer mt-2 md:mt-0">
+                     <svg class="dark:text-white" width="152" height="24" viewBox="0 0 152 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                         <g clip-path="url(#clip0)">
+                             <path
+                                 d="M17.5598 24.4285C17.3999 24.4291 17.2422 24.3914 17.0998 24.3185L11.9998 21.6485L6.89982 24.3185C6.73422 24.4056 6.5475 24.4444 6.3609 24.4307C6.1743 24.4169 5.9953 24.3511 5.84425 24.2407C5.6932 24.1303 5.57616 23.9797 5.50644 23.8061C5.43671 23.6324 5.4171 23.4427 5.44982 23.2585L6.44982 17.6285L2.32982 13.6285C2.20128 13.5002 2.1101 13.3394 2.06605 13.1632C2.02201 12.987 2.02677 12.8022 2.07982 12.6285C2.13778 12.4508 2.2444 12.2928 2.38757 12.1726C2.53075 12.0525 2.70475 11.9748 2.88982 11.9485L8.58982 11.1185L11.0998 5.98849C11.1817 5.81942 11.3096 5.67683 11.4687 5.57706C11.6279 5.47729 11.812 5.42438 11.9998 5.42438C12.1877 5.42438 12.3717 5.47729 12.5309 5.57706C12.6901 5.67683 12.8179 5.81942 12.8998 5.98849L15.4398 11.1085L21.1398 11.9385C21.3249 11.9648 21.4989 12.0425 21.6421 12.1626C21.7852 12.2828 21.8919 12.4408 21.9498 12.6185C22.0029 12.7922 22.0076 12.977 21.9636 13.1532C21.9196 13.3294 21.8284 13.4902 21.6998 13.6185L17.5798 17.6185L18.5798 23.2485C18.6155 23.436 18.5968 23.6297 18.526 23.8069C18.4551 23.9841 18.335 24.1374 18.1798 24.2485C17.9987 24.3754 17.7807 24.4387 17.5598 24.4285V24.4285Z"
+                                 fill="currentColor"
+                             />
+                         </g>
+                         <g clip-path="url(#clip1)">
+                             <path
+                                 d="M49.5598 24.4285C49.3999 24.4291 49.2422 24.3914 49.0998 24.3185L43.9998 21.6485L38.8998 24.3185C38.7342 24.4056 38.5475 24.4444 38.3609 24.4307C38.1743 24.4169 37.9953 24.3511 37.8443 24.2407C37.6932 24.1303 37.5762 23.9797 37.5064 23.8061C37.4367 23.6324 37.4171 23.4427 37.4498 23.2585L38.4498 17.6285L34.3298 13.6285C34.2013 13.5002 34.1101 13.3394 34.0661 13.1632C34.022 12.987 34.0268 12.8022 34.0798 12.6285C34.1378 12.4508 34.2444 12.2928 34.3876 12.1726C34.5307 12.0525 34.7047 11.9748 34.8898 11.9485L40.5898 11.1185L43.0998 5.98849C43.1817 5.81942 43.3096 5.67683 43.4687 5.57706C43.6279 5.47729 43.812 5.42438 43.9998 5.42438C44.1877 5.42438 44.3717 5.47729 44.5309 5.57706C44.6901 5.67683 44.8179 5.81942 44.8998 5.98849L47.4398 11.1085L53.1398 11.9385C53.3249 11.9648 53.4989 12.0425 53.6421 12.1626C53.7852 12.2828 53.8919 12.4408 53.9498 12.6185C54.0029 12.7922 54.0076 12.977 53.9636 13.1532C53.9196 13.3294 53.8284 13.4902 53.6998 13.6185L49.5798 17.6185L50.5798 23.2485C50.6155 23.436 50.5968 23.6297 50.526 23.8069C50.4551 23.9841 50.335 24.1374 50.1798 24.2485C49.9987 24.3754 49.7807 24.4387 49.5598 24.4285V24.4285Z"
+                                 fill="currentColor"
+                             />
+                         </g>
+                         <g clip-path="url(#clip2)">
+                             <path
+                                 d="M81.5598 24.4285C81.3999 24.4291 81.2422 24.3914 81.0998 24.3185L75.9998 21.6485L70.8998 24.3185C70.7342 24.4056 70.5475 24.4444 70.3609 24.4307C70.1743 24.4169 69.9953 24.3511 69.8443 24.2407C69.6932 24.1303 69.5762 23.9797 69.5064 23.8061C69.4367 23.6324 69.4171 23.4427 69.4498 23.2585L70.4498 17.6285L66.3298 13.6285C66.2013 13.5002 66.1101 13.3394 66.0661 13.1632C66.022 12.987 66.0268 12.8022 66.0798 12.6285C66.1378 12.4508 66.2444 12.2928 66.3876 12.1726C66.5307 12.0525 66.7047 11.9748 66.8898 11.9485L72.5898 11.1185L75.0998 5.98849C75.1817 5.81942 75.3096 5.67683 75.4687 5.57706C75.6279 5.47729 75.812 5.42438 75.9998 5.42438C76.1877 5.42438 76.3717 5.47729 76.5309 5.57706C76.6901 5.67683 76.8179 5.81942 76.8998 5.98849L79.4398 11.1085L85.1398 11.9385C85.3249 11.9648 85.4989 12.0425 85.6421 12.1626C85.7852 12.2828 85.8919 12.4408 85.9498 12.6185C86.0029 12.7922 86.0076 12.977 85.9636 13.1532C85.9196 13.3294 85.8284 13.4902 85.6998 13.6185L81.5798 17.6185L82.5798 23.2485C82.6155 23.436 82.5968 23.6297 82.526 23.8069C82.4551 23.9841 82.335 24.1374 82.1798 24.2485C81.9987 24.3754 81.7807 24.4387 81.5598 24.4285V24.4285Z"
+                                 fill="currentColor"
+                             />
+                         </g>
+                         <g clip-path="url(#clip3)">
+                             <path
+                                 d="M113.56 24.4285C113.4 24.4291 113.242 24.3914 113.1 24.3185L108 21.6485L102.9 24.3185C102.734 24.4056 102.548 24.4444 102.361 24.4307C102.174 24.4169 101.995 24.3511 101.844 24.2407C101.693 24.1303 101.576 23.9797 101.506 23.8061C101.437 23.6324 101.417 23.4427 101.45 23.2585L102.45 17.6285L98.3298 13.6285C98.2013 13.5002 98.1101 13.3394 98.0661 13.1632C98.022 12.987 98.0268 12.8022 98.0798 12.6285C98.1378 12.4508 98.2444 12.2928 98.3876 12.1726C98.5307 12.0525 98.7047 11.9748 98.8898 11.9485L104.59 11.1185L107.1 5.98849C107.182 5.81942 107.31 5.67683 107.469 5.57706C107.628 5.47729 107.812 5.42438 108 5.42438C108.188 5.42438 108.372 5.47729 108.531 5.57706C108.69 5.67683 108.818 5.81942 108.9 5.98849L111.44 11.1085L117.14 11.9385C117.325 11.9648 117.499 12.0425 117.642 12.1626C117.785 12.2828 117.892 12.4408 117.95 12.6185C118.003 12.7922 118.008 12.977 117.964 13.1532C117.92 13.3294 117.828 13.4902 117.7 13.6185L113.58 17.6185L114.58 23.2485C114.616 23.436 114.597 23.6297 114.526 23.8069C114.455 23.9841 114.335 24.1374 114.18 24.2485C113.999 24.3754 113.781 24.4387 113.56 24.4285V24.4285Z"
+                                 fill="currentColor"
+                             />
+                         </g>
+                         <g clip-path="url(#clip4)">
+                             <path d="M135.146 16.911L131.052 12.9355L136.734 12.1081L137.256 12.032L137.488 11.558L139.998 6.42798L139.998 6.42798L140 6.42443L140.004 6.4329L142.544 11.5529L142.777 12.0225L143.296 12.0981L148.978 12.9255L144.883 16.901L144.502 17.2708L144.595 17.7934L145.595 23.4234L145.595 23.4234L145.597 23.4356L145.605 23.4463L145.56 24.4285L145.556 23.4474L145.564 23.4326L140.464 20.7626L140 20.5197L139.536 20.7626L134.436 23.4326L134.434 23.4334L135.434 17.8034L135.527 17.2808L135.146 16.911Z" stroke="currentColor" stroke-width="2" />
+                         </g>
+                         <defs>
+                             <clipPath id="clip0">
+                                 <rect width="24" height="24" fill="white" />
+                             </clipPath>
+                             <clipPath id="clip1">
+                                 <rect width="24" height="24" fill="white" transform="translate(32)" />
+                             </clipPath>
+                             <clipPath id="clip2">
+                                 <rect width="24" height="24" fill="white" transform="translate(64)" />
+                             </clipPath>
+                             <clipPath id="clip3">
+                                 <rect width="24" height="24" fill="white" transform="translate(96)" />
+                             </clipPath>
+                             <clipPath id="clip4">
+                                 <rect width="24" height="24" fill="white" transform="translate(128)" />
+                             </clipPath>
+                         </defs>
+                     </svg>
+                 </div>
+             </div>
+             <div id="menu" class="md:block">
+                 <p class="mt-3 text-base leading-normal text-gray-600 dark:text-white w-full md:w-9/12 xl:w-5/6">When you want to decorate your home, the idea of choosing a decorative theme can seem daunting. Some themes seem to have an endless amount of pieces, while others can feel hard to accomplish</p>
+                 <div class="hidden md:flex mt-6 flex-row justify-start items-start space-x-4">
+                     <div>
+                         <img src="https://i.ibb.co/QXzVpHp/vincent-wachowiak-8g-Cm-EBVl6a-I-unsplash-1.png" alt="chair-1" />
+                     </div>
+                     <div>
+                         <img src="https://i.ibb.co/znYKsbc/vincent-wachowiak-z-P316-KSOX0-E-unsplash-1.png" alt="chair-2" />
+                     </div>
+                     <div class="hidden md:block">
+                         <img src="https://i.ibb.co/QXzVpHp/vincent-wachowiak-8g-Cm-EBVl6a-I-unsplash-1.png" alt="chair-3" />
+                     </div>
+                     <div class="hidden md:block">
+                         <img src="https://i.ibb.co/znYKsbc/vincent-wachowiak-z-P316-KSOX0-E-unsplash-1.png" alt="chair-4" />
+                     </div>
+                 </div>
+                 <div class="md:hidden carousel pt-8 cursor-none" data-flickity='{ "wrapAround": true,"pageDots": false }'>
+                     <div class="carousel-cell">
+                         <div class="md:w-full h-full relative">
+                             <img src="https://i.ibb.co/QXzVpHp/vincent-wachowiak-8g-Cm-EBVl6a-I-unsplash-1.png" alt="bag" class="w-full h-full object-fit object-cover" />
+                         </div>
+                     </div>
+                     <div class="carousel-cell">
+                         <div class="md:w-full h-full relative">
+                             <img src="https://i.ibb.co/znYKsbc/vincent-wachowiak-z-P316-KSOX0-E-unsplash-1.png" alt="shoes" class="w-full h-full object-fit object-cover" />
+                         </div>
+                     </div>
+                     <div class="carousel-cell">
+                         <div class="md:w-full h-full relative">
+                             <img src="https://i.ibb.co/QXzVpHp/vincent-wachowiak-8g-Cm-EBVl6a-I-unsplash-1.png" alt="wallet" class="w-full h-full object-fit object-cover" />
+                         </div>
+                     </div>
+                     <div class="carousel-cell">
+                         <div class="md:w-full h-full relative">
+                             <img src="https://i.ibb.co/znYKsbc/vincent-wachowiak-z-P316-KSOX0-E-unsplash-1.png" alt="wallet" class="w-full h-full object-fit object-cover" />
+                         </div>
+                     </div>
+                     <div class="carousel-cell">
+                         <div class="md:w-full h-full relative">
+                             <img src="https://i.ibb.co/QXzVpHp/vincent-wachowiak-8g-Cm-EBVl6a-I-unsplash-1.png" alt="wallet" class="w-full h-full object-fit object-cover" />
+                         </div>
+                     </div>
+                     <div class="carousel-cell">
+                         <div class="md:w-full h-full relative">
+                             <img src="https://i.ibb.co/znYKsbc/vincent-wachowiak-z-P316-KSOX0-E-unsplash-1.png" alt="wallet" class="w-full h-full object-fit object-cover" />
+                         </div>
+                     </div>
+                     <div class="carousel-cell"></div>
+                 </div>
+                 <div class="mt-6 flex justify-start items-center flex-row space-x-2.5">
+                     <div>
+                         <img src="https://i.ibb.co/QcqyrVG/Mask-Group.png" alt="girl-avatar" />
+                     </div>
+                     <div class="flex flex-col justify-start items-start space-y-2">
+                         <p class="text-base font-medium leading-none text-gray-800 dark:text-white">Anna Kendrick</p>
+                         <p class="text-sm leading-none text-gray-600 dark:text-white">14 July 2021</p>
+                     </div>
+                 </div>
+             </div>
+
+             <div class="w-full flex justify-start items-start flex-col bg-gray-50 dark:bg-gray-800 md:px-8 py-8">
+                 <div class="flex flex-col md:flex-row flex justify-between w-full">
+                     <div class="flex flex-row justify-between items-start">
+                         <p class="text-xl md:text-2xl font-medium leading-normal text-gray-800 dark:text-white">Comfortable and minimal, just how I like it!</p>
+                         <button onclick="showMenu2(true)" class="ml-4 md:hidden">
+                             <svg id="closeIcon2" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                 <path d="M15 12.5L10 7.5L5 12.5" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
+                             </svg>
+                             <svg id="openIcon2" class="hidden" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                 <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
+                             </svg>
+                         </button>
+                     </div>
+                     <div class="cursor-pointer mt-2 md:mt-0">
+                         <svg class="dark:text-white" width="152" height="24" viewBox="0 0 152 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                             <g clip-path="url(#clip0)">
+                                 <path
+                                     d="M17.5598 24.4285C17.3999 24.4291 17.2422 24.3914 17.0998 24.3185L11.9998 21.6485L6.89982 24.3185C6.73422 24.4056 6.5475 24.4444 6.3609 24.4307C6.1743 24.4169 5.9953 24.3511 5.84425 24.2407C5.6932 24.1303 5.57616 23.9797 5.50644 23.8061C5.43671 23.6324 5.4171 23.4427 5.44982 23.2585L6.44982 17.6285L2.32982 13.6285C2.20128 13.5002 2.1101 13.3394 2.06605 13.1632C2.02201 12.987 2.02677 12.8022 2.07982 12.6285C2.13778 12.4508 2.2444 12.2928 2.38757 12.1726C2.53075 12.0525 2.70475 11.9748 2.88982 11.9485L8.58982 11.1185L11.0998 5.98849C11.1817 5.81942 11.3096 5.67683 11.4687 5.57706C11.6279 5.47729 11.812 5.42438 11.9998 5.42438C12.1877 5.42438 12.3717 5.47729 12.5309 5.57706C12.6901 5.67683 12.8179 5.81942 12.8998 5.98849L15.4398 11.1085L21.1398 11.9385C21.3249 11.9648 21.4989 12.0425 21.6421 12.1626C21.7852 12.2828 21.8919 12.4408 21.9498 12.6185C22.0029 12.7922 22.0076 12.977 21.9636 13.1532C21.9196 13.3294 21.8284 13.4902 21.6998 13.6185L17.5798 17.6185L18.5798 23.2485C18.6155 23.436 18.5968 23.6297 18.526 23.8069C18.4551 23.9841 18.335 24.1374 18.1798 24.2485C17.9987 24.3754 17.7807 24.4387 17.5598 24.4285V24.4285Z"
+                                     fill="currentColor"
+                                 />
+                             </g>
+                             <g clip-path="url(#clip1)">
+                                 <path
+                                     d="M49.5598 24.4285C49.3999 24.4291 49.2422 24.3914 49.0998 24.3185L43.9998 21.6485L38.8998 24.3185C38.7342 24.4056 38.5475 24.4444 38.3609 24.4307C38.1743 24.4169 37.9953 24.3511 37.8443 24.2407C37.6932 24.1303 37.5762 23.9797 37.5064 23.8061C37.4367 23.6324 37.4171 23.4427 37.4498 23.2585L38.4498 17.6285L34.3298 13.6285C34.2013 13.5002 34.1101 13.3394 34.0661 13.1632C34.022 12.987 34.0268 12.8022 34.0798 12.6285C34.1378 12.4508 34.2444 12.2928 34.3876 12.1726C34.5307 12.0525 34.7047 11.9748 34.8898 11.9485L40.5898 11.1185L43.0998 5.98849C43.1817 5.81942 43.3096 5.67683 43.4687 5.57706C43.6279 5.47729 43.812 5.42438 43.9998 5.42438C44.1877 5.42438 44.3717 5.47729 44.5309 5.57706C44.6901 5.67683 44.8179 5.81942 44.8998 5.98849L47.4398 11.1085L53.1398 11.9385C53.3249 11.9648 53.4989 12.0425 53.6421 12.1626C53.7852 12.2828 53.8919 12.4408 53.9498 12.6185C54.0029 12.7922 54.0076 12.977 53.9636 13.1532C53.9196 13.3294 53.8284 13.4902 53.6998 13.6185L49.5798 17.6185L50.5798 23.2485C50.6155 23.436 50.5968 23.6297 50.526 23.8069C50.4551 23.9841 50.335 24.1374 50.1798 24.2485C49.9987 24.3754 49.7807 24.4387 49.5598 24.4285V24.4285Z"
+                                     fill="currentColor"
+                                 />
+                             </g>
+                             <g clip-path="url(#clip2)">
+                                 <path
+                                     d="M81.5598 24.4285C81.3999 24.4291 81.2422 24.3914 81.0998 24.3185L75.9998 21.6485L70.8998 24.3185C70.7342 24.4056 70.5475 24.4444 70.3609 24.4307C70.1743 24.4169 69.9953 24.3511 69.8443 24.2407C69.6932 24.1303 69.5762 23.9797 69.5064 23.8061C69.4367 23.6324 69.4171 23.4427 69.4498 23.2585L70.4498 17.6285L66.3298 13.6285C66.2013 13.5002 66.1101 13.3394 66.0661 13.1632C66.022 12.987 66.0268 12.8022 66.0798 12.6285C66.1378 12.4508 66.2444 12.2928 66.3876 12.1726C66.5307 12.0525 66.7047 11.9748 66.8898 11.9485L72.5898 11.1185L75.0998 5.98849C75.1817 5.81942 75.3096 5.67683 75.4687 5.57706C75.6279 5.47729 75.812 5.42438 75.9998 5.42438C76.1877 5.42438 76.3717 5.47729 76.5309 5.57706C76.6901 5.67683 76.8179 5.81942 76.8998 5.98849L79.4398 11.1085L85.1398 11.9385C85.3249 11.9648 85.4989 12.0425 85.6421 12.1626C85.7852 12.2828 85.8919 12.4408 85.9498 12.6185C86.0029 12.7922 86.0076 12.977 85.9636 13.1532C85.9196 13.3294 85.8284 13.4902 85.6998 13.6185L81.5798 17.6185L82.5798 23.2485C82.6155 23.436 82.5968 23.6297 82.526 23.8069C82.4551 23.9841 82.335 24.1374 82.1798 24.2485C81.9987 24.3754 81.7807 24.4387 81.5598 24.4285V24.4285Z"
+                                     fill="currentColor"
+                                 />
+                             </g>
+                             <g clip-path="url(#clip3)">
+                                 <path
+                                     d="M113.56 24.4285C113.4 24.4291 113.242 24.3914 113.1 24.3185L108 21.6485L102.9 24.3185C102.734 24.4056 102.548 24.4444 102.361 24.4307C102.174 24.4169 101.995 24.3511 101.844 24.2407C101.693 24.1303 101.576 23.9797 101.506 23.8061C101.437 23.6324 101.417 23.4427 101.45 23.2585L102.45 17.6285L98.3298 13.6285C98.2013 13.5002 98.1101 13.3394 98.0661 13.1632C98.022 12.987 98.0268 12.8022 98.0798 12.6285C98.1378 12.4508 98.2444 12.2928 98.3876 12.1726C98.5307 12.0525 98.7047 11.9748 98.8898 11.9485L104.59 11.1185L107.1 5.98849C107.182 5.81942 107.31 5.67683 107.469 5.57706C107.628 5.47729 107.812 5.42438 108 5.42438C108.188 5.42438 108.372 5.47729 108.531 5.57706C108.69 5.67683 108.818 5.81942 108.9 5.98849L111.44 11.1085L117.14 11.9385C117.325 11.9648 117.499 12.0425 117.642 12.1626C117.785 12.2828 117.892 12.4408 117.95 12.6185C118.003 12.7922 118.008 12.977 117.964 13.1532C117.92 13.3294 117.828 13.4902 117.7 13.6185L113.58 17.6185L114.58 23.2485C114.616 23.436 114.597 23.6297 114.526 23.8069C114.455 23.9841 114.335 24.1374 114.18 24.2485C113.999 24.3754 113.781 24.4387 113.56 24.4285V24.4285Z"
+                                     fill="currentColor"
+                                 />
+                             </g>
+                             <g clip-path="url(#clip4)">
+                                 <path d="M135.146 16.911L131.052 12.9355L136.734 12.1081L137.256 12.032L137.488 11.558L139.998 6.42798L139.998 6.42798L140 6.42443L140.004 6.4329L142.544 11.5529L142.777 12.0225L143.296 12.0981L148.978 12.9255L144.883 16.901L144.502 17.2708L144.595 17.7934L145.595 23.4234L145.595 23.4234L145.597 23.4356L145.605 23.4463L145.56 24.4285L145.556 23.4474L145.564 23.4326L140.464 20.7626L140 20.5197L139.536 20.7626L134.436 23.4326L134.434 23.4334L135.434 17.8034L135.527 17.2808L135.146 16.911Z" stroke="currentColor" stroke-width="2" />
+                             </g>
+                             <defs>
+                                 <clipPath id="clip0">
+                                     <rect width="24" height="24" fill="white" />
+                                 </clipPath>
+                                 <clipPath id="clip1">
+                                     <rect width="24" height="24" fill="white" transform="translate(32)" />
+                                 </clipPath>
+                                 <clipPath id="clip2">
+                                     <rect width="24" height="24" fill="white" transform="translate(64)" />
+                                 </clipPath>
+                                 <clipPath id="clip3">
+                                     <rect width="24" height="24" fill="white" transform="translate(96)" />
+                                 </clipPath>
+                                 <clipPath id="clip4">
+                                     <rect width="24" height="24" fill="white" transform="translate(128)" />
+                                 </clipPath>
+                             </defs>
+                         </svg>
+                     </div>
+                 </div>
+                 <div id="menu2" class="hidden md:block">
+                     <p class="mt-3 text-base leading-normal text-gray-600 dark:text-white w-full md:w-9/12 xl:w-5/6">This style relies more on neutral colors with little to no embellishment on furniture. Lighter fabrics, such as silk and cotton, are popular, as are lighter colors in wood and metal.</p>
+                     <div class="mt-6 flex flex-row justify-start items-start space-x-4">
+                         <div class="py-4 px-8 bg-gray-100">
+                             <img src="https://i.ibb.co/xfg5T5T/sam-moqadam-kvmds-Tr-GOBM-unsplash-removebg-preview-1.png" alt="chair-5" />
+                         </div>
+                         <div class="py-4 px-8 bg-gray-100">
+                             <img src="https://i.ibb.co/54F7vvV/Group-1855.png" alt="chair-6" />
+                         </div>
+                     </div>
+                     <div class="mt-6 flex justify-start items-center flex-row space-x-2.5">
+                         <div>
+                             <img src="https://i.ibb.co/RCTGZTc/Mask-Group-1.png" alt="girl-avatar" />
+                         </div>
+                         <div class="flex flex-col justify-start items-start space-y-2">
+                             <p class="text-base font-medium leading-none text-gray-800 dark:text-white">James Schofield</p>
+                             <p class="text-sm leading-none text-gray-600 dark:text-white">23 June 2021</p>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </div>
+ </div>
+      <section class="text-gray-600 body-font overflow-hidden">
+        <div class="container px-5 py-24 mx-auto">
+          <div class="flex flex-col text-center w-full mb-20">
+            <h1 class="sm:text-4xl text-3xl font-medium title-font mb-2 text-gray-900">Pricing</h1>
+            <p class="lg:w-2/3 mx-auto leading-relaxed text-base text-gray-500">Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical.</p>
+            <div class="flex mx-auto border-2 border-indigo-500 rounded overflow-hidden mt-6">
+              <button class="py-1 px-4 bg-indigo-500 text-white focus:outline-none">Monthly</button>
+              <button class="py-1 px-4 focus:outline-none">Annually</button>
+            </div>
+          </div>
+          <div class="flex flex-wrap -m-4">
+            <div class="p-4 xl:w-1/4 md:w-1/2 w-full">
+              <div class="h-full p-6 rounded-lg border-2 border-gray-300 flex flex-col relative overflow-hidden">
+                <h2 class="text-sm tracking-widest title-font mb-1 font-medium">START</h2>
+                <h1 class="text-5xl text-gray-900 pb-4 mb-4 border-b border-gray-200 leading-none">Free</h1>
+                <p class="flex items-center text-gray-600 mb-2">
+                  <span class="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" class="w-3 h-3" viewBox="0 0 24 24">
+                      <path d="M20 6L9 17l-5-5"></path>
+                    </svg>
+                  </span>Vexillologist pitchfork
+                </p>
+                <p class="flex items-center text-gray-600 mb-2">
+                  <span class="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" class="w-3 h-3" viewBox="0 0 24 24">
+                      <path d="M20 6L9 17l-5-5"></path>
+                    </svg>
+                  </span>Tumeric plaid portland
+                </p>
+                <p class="flex items-center text-gray-600 mb-6">
+                  <span class="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" class="w-3 h-3" viewBox="0 0 24 24">
+                      <path d="M20 6L9 17l-5-5"></path>
+                    </svg>
+                  </span>Mixtape chillwave tumeric
+                </p>
+                <button class="flex items-center mt-auto text-white bg-gray-400 border-0 py-2 px-4 w-full focus:outline-none hover:bg-gray-500 rounded">Button
+                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-auto" viewBox="0 0 24 24">
+                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                  </svg>
+                </button>
+                <p class="text-xs text-gray-500 mt-3">Literally you probably haven't heard of them jean shorts.</p>
+              </div>
+            </div>
+            <div class="p-4 xl:w-1/4 md:w-1/2 w-full">
+              <div class="h-full p-6 rounded-lg border-2 border-indigo-500 flex flex-col relative overflow-hidden">
+                <span class="bg-indigo-500 text-white px-3 py-1 tracking-widest text-xs absolute right-0 top-0 rounded-bl">POPULAR</span>
+                <h2 class="text-sm tracking-widest title-font mb-1 font-medium">PRO</h2>
+                <h1 class="text-5xl text-gray-900 leading-none flex items-center pb-4 mb-4 border-b border-gray-200">
+                  <span>$38</span>
+                  <span class="text-lg ml-1 font-normal text-gray-500">/mo</span>
+                </h1>
+                <p class="flex items-center text-gray-600 mb-2">
+                  <span class="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" class="w-3 h-3" viewBox="0 0 24 24">
+                      <path d="M20 6L9 17l-5-5"></path>
+                    </svg>
+                  </span>Vexillologist pitchfork
+                </p>
+                <p class="flex items-center text-gray-600 mb-2">
+                  <span class="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" class="w-3 h-3" viewBox="0 0 24 24">
+                      <path d="M20 6L9 17l-5-5"></path>
+                    </svg>
+                  </span>Tumeric plaid portland
+                </p>
+                <p class="flex items-center text-gray-600 mb-2">
+                  <span class="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" class="w-3 h-3" viewBox="0 0 24 24">
+                      <path d="M20 6L9 17l-5-5"></path>
+                    </svg>
+                  </span>Hexagon neutra unicorn
+                </p>
+                <p class="flex items-center text-gray-600 mb-6">
+                  <span class="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" class="w-3 h-3" viewBox="0 0 24 24">
+                      <path d="M20 6L9 17l-5-5"></path>
+                    </svg>
+                  </span>Mixtape chillwave tumeric
+                </p>
+                <button class="flex items-center mt-auto text-white bg-indigo-500 border-0 py-2 px-4 w-full focus:outline-none hover:bg-indigo-600 rounded">Button
+                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-auto" viewBox="0 0 24 24">
+                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                  </svg>
+                </button>
+                <p class="text-xs text-gray-500 mt-3">Literally you probably haven't heard of them jean shorts.</p>
+              </div>
+            </div>
+            <div class="p-4 xl:w-1/4 md:w-1/2 w-full">
+              <div class="h-full p-6 rounded-lg border-2 border-gray-300 flex flex-col relative overflow-hidden">
+                <h2 class="text-sm tracking-widest title-font mb-1 font-medium">BUSINESS</h2>
+                <h1 class="text-5xl text-gray-900 leading-none flex items-center pb-4 mb-4 border-b border-gray-200">
+                  <span>$56</span>
+                  <span class="text-lg ml-1 font-normal text-gray-500">/mo</span>
+                </h1>
+                <p class="flex items-center text-gray-600 mb-2">
+                  <span class="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" class="w-3 h-3" viewBox="0 0 24 24">
+                      <path d="M20 6L9 17l-5-5"></path>
+                    </svg>
+                  </span>Vexillologist pitchfork
+                </p>
+                <p class="flex items-center text-gray-600 mb-2">
+                  <span class="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" class="w-3 h-3" viewBox="0 0 24 24">
+                      <path d="M20 6L9 17l-5-5"></path>
+                    </svg>
+                  </span>Tumeric plaid portland
+                </p>
+                <p class="flex items-center text-gray-600 mb-2">
+                  <span class="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" class="w-3 h-3" viewBox="0 0 24 24">
+                      <path d="M20 6L9 17l-5-5"></path>
+                    </svg>
+                  </span>Hexagon neutra unicorn
+                </p>
+                <p class="flex items-center text-gray-600 mb-2">
+                  <span class="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" class="w-3 h-3" viewBox="0 0 24 24">
+                      <path d="M20 6L9 17l-5-5"></path>
+                    </svg>
+                  </span>Vexillologist pitchfork
+                </p>
+                <p class="flex items-center text-gray-600 mb-6">
+                  <span class="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" class="w-3 h-3" viewBox="0 0 24 24">
+                      <path d="M20 6L9 17l-5-5"></path>
+                    </svg>
+                  </span>Mixtape chillwave tumeric
+                </p>
+                <button class="flex items-center mt-auto text-white bg-gray-400 border-0 py-2 px-4 w-full focus:outline-none hover:bg-gray-500 rounded">Button
+                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-auto" viewBox="0 0 24 24">
+                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                  </svg>
+                </button>
+                <p class="text-xs text-gray-500 mt-3">Literally you probably haven't heard of them jean shorts.</p>
+              </div>
+            </div>
+            <div class="p-4 xl:w-1/4 md:w-1/2 w-full">
+              <div class="h-full p-6 rounded-lg border-2 border-gray-300 flex flex-col relative overflow-hidden">
+                <h2 class="text-sm tracking-widest title-font mb-1 font-medium">SPECIAL</h2>
+                <h1 class="text-5xl text-gray-900 leading-none flex items-center pb-4 mb-4 border-b border-gray-200">
+                  <span>$72</span>
+                  <span class="text-lg ml-1 font-normal text-gray-500">/mo</span>
+                </h1>
+                <p class="flex items-center text-gray-600 mb-2">
+                  <span class="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" class="w-3 h-3" viewBox="0 0 24 24">
+                      <path d="M20 6L9 17l-5-5"></path>
+                    </svg>
+                  </span>Vexillologist pitchfork
+                </p>
+                <p class="flex items-center text-gray-600 mb-2">
+                  <span class="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" class="w-3 h-3" viewBox="0 0 24 24">
+                      <path d="M20 6L9 17l-5-5"></path>
+                    </svg>
+                  </span>Tumeric plaid portland
+                </p>
+                <p class="flex items-center text-gray-600 mb-2">
+                  <span class="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" class="w-3 h-3" viewBox="0 0 24 24">
+                      <path d="M20 6L9 17l-5-5"></path>
+                    </svg>
+                  </span>Hexagon neutra unicorn
+                </p>
+                <p class="flex items-center text-gray-600 mb-2">
+                  <span class="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" class="w-3 h-3" viewBox="0 0 24 24">
+                      <path d="M20 6L9 17l-5-5"></path>
+                    </svg>
+                  </span>Vexillologist pitchfork
+                </p>
+                <p class="flex items-center text-gray-600 mb-6">
+                  <span class="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" class="w-3 h-3" viewBox="0 0 24 24">
+                      <path d="M20 6L9 17l-5-5"></path>
+                    </svg>
+                  </span>Mixtape chillwave tumeric
+                </p>
+                <button class="flex items-center mt-auto text-white bg-gray-400 border-0 py-2 px-4 w-full focus:outline-none hover:bg-gray-500 rounded">Button
+                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-auto" viewBox="0 0 24 24">
+                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                  </svg>
+                </button>
+                <p class="text-xs text-gray-500 mt-3">Literally you probably haven't heard of them jean shorts.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="text-gray-600 body-font">
+        <div class="container px-5 py-24 mx-auto">
+          <div class="flex flex-col text-center w-full mb-20">
+            <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Our Team</h1>
+            <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical gentrify, subway tile poke farm-to-table. Franzen you probably haven't heard of them.</p>
+          </div>
+          <div class="flex flex-wrap -m-2">
+            <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
+              <div class="h-full flex items-center border-gray-200 border p-4 rounded-lg">
+                <img alt="team" class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src="https://dummyimage.com/80x80">
+                <div class="flex-grow">
+                  <h2 class="text-gray-900 title-font font-medium">Holden Caulfield</h2>
+                  <p class="text-gray-500">UI Designer</p>
+                </div>
+              </div>
+            </div>
+            <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
+              <div class="h-full flex items-center border-gray-200 border p-4 rounded-lg">
+                <img alt="team" class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src="https://dummyimage.com/84x84">
+                <div class="flex-grow">
+                  <h2 class="text-gray-900 title-font font-medium">Henry Letham</h2>
+                  <p class="text-gray-500">CTO</p>
+                </div>
+              </div>
+            </div>
+            <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
+              <div class="h-full flex items-center border-gray-200 border p-4 rounded-lg">
+                <img alt="team" class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src="https://dummyimage.com/88x88">
+                <div class="flex-grow">
+                  <h2 class="text-gray-900 title-font font-medium">Oskar Blinde</h2>
+                  <p class="text-gray-500">Founder</p>
+                </div>
+              </div>
+            </div>
+            <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
+              <div class="h-full flex items-center border-gray-200 border p-4 rounded-lg">
+                <img alt="team" class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src="https://dummyimage.com/90x90">
+                <div class="flex-grow">
+                  <h2 class="text-gray-900 title-font font-medium">John Doe</h2>
+                  <p class="text-gray-500">DevOps</p>
+                </div>
+              </div>
+            </div>
+            <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
+              <div class="h-full flex items-center border-gray-200 border p-4 rounded-lg">
+                <img alt="team" class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src="https://dummyimage.com/94x94">
+                <div class="flex-grow">
+                  <h2 class="text-gray-900 title-font font-medium">Martin Eden</h2>
+                  <p class="text-gray-500">Software Engineer</p>
+                </div>
+              </div>
+            </div>
+            <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
+              <div class="h-full flex items-center border-gray-200 border p-4 rounded-lg">
+                <img alt="team" class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src="https://dummyimage.com/98x98">
+                <div class="flex-grow">
+                  <h2 class="text-gray-900 title-font font-medium">Boris Kitua</h2>
+                  <p class="text-gray-500">UX Researcher</p>
+                </div>
+              </div>
+            </div>
+            <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
+              <div class="h-full flex items-center border-gray-200 border p-4 rounded-lg">
+                <img alt="team" class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src="https://dummyimage.com/100x90">
+                <div class="flex-grow">
+                  <h2 class="text-gray-900 title-font font-medium">Atticus Finch</h2>
+                  <p class="text-gray-500">QA Engineer</p>
+                </div>
+              </div>
+            </div>
+            <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
+              <div class="h-full flex items-center border-gray-200 border p-4 rounded-lg">
+                <img alt="team" class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src="https://dummyimage.com/104x94">
+                <div class="flex-grow">
+                  <h2 class="text-gray-900 title-font font-medium">Alper Kamu</h2>
+                  <p class="text-gray-500">System</p>
+                </div>
+              </div>
+            </div>
+            <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
+              <div class="h-full flex items-center border-gray-200 border p-4 rounded-lg">
+                <img alt="team" class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src="https://dummyimage.com/108x98">
+                <div class="flex-grow">
+                  <h2 class="text-gray-900 title-font font-medium">Rodrigo Monchi</h2>
+                  <p class="text-gray-500">Product Manager</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+
+      <!-- component -->
+<!-- This is an example component -->
+<div class="max-w-2xl mx-auto">
+
+	<div id="default-carousel" class="relative" data-carousel="static">
+        <!-- Carousel wrapper -->
+        <div class="overflow-hidden relative h-56 rounded-lg sm:h-64 xl:h-80 2xl:h-96">
+            <!-- Item 1 -->
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                <span class="absolute top-1/2 left-1/2 text-2xl font-semibold text-white -translate-x-1/2 -translate-y-1/2 sm:text-3xl dark:text-gray-800">First Slide</span>
+                <img src="https://media.istockphoto.com/id/1591225732/photo/modern-open-plan-office-space-with-tables-office-chairs-creeper-plants-and-manager-room.webp?a=1&b=1&s=612x612&w=0&k=20&c=WrveNEeaj4wX--wTkwNl5opHGWoQ8VbKhb8i8Q69xH0=" class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="...">
+            </div>
+            <!-- Item 2 -->
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                <img src="https://media.istockphoto.com/id/2148178474/photo/two-hispanic-programmers-collaborating-in-modern-office.webp?a=1&b=1&s=612x612&w=0&k=20&c=_wHVuIZuJv-FoMVws07hopohS8RKVhHA3PTQOjNEd5c=" class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="...">
+            </div>
+            <!-- Item 3 -->
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                <img src="https://plus.unsplash.com/premium_photo-1663023612721-e588768ef403?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8ZGV2ZWxvcGVyfGVufDB8fDB8fHww" class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="...">
+            </div>
+             <!-- Item 4 -->
+             <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                <img src="https://plus.unsplash.com/premium_photo-1663023612721-e588768ef403?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8ZGV2ZWxvcGVyfGVufDB8fDB8fHww" class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="...">
+            </div>
+        </div>
+        <!-- Slider indicators -->
+        <div class="flex absolute bottom-5 left-1/2 z-30 space-x-3 -translate-x-1/2">
+            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 1" data-carousel-slide-to="0"></button>
+            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
+            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
+        </div>
+        <!-- Slider controls -->
+        <button type="button" class="flex absolute top-0 left-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none" data-carousel-prev>
+            <span class="inline-flex justify-center items-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-black/70 dark:bg-blue-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                <svg class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                <span class="hidden">Previous</span>
+            </span>
+        </button>
+        <button type="button" class="flex absolute top-0 right-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none" data-carousel-next>
+            <span class="inline-flex justify-center items-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-black/70 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                <svg class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                <span class="hidden">Next</span>
+            </span>
+        </button>
+    </div>
+
+	
+    <script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script>
+</div>
+      <section class="text-gray-600 body-font relative">
+        <div class="container px-5 py-24 mx-auto flex sm:flex-nowrap flex-wrap">
+          <div class="lg:w-2/3 md:w-1/2 bg-gray-300 rounded-lg overflow-hidden sm:mr-10 p-10 flex items-end justify-start relative">
+            <iframe width="100%" height="100%" class="absolute inset-0" frameborder="0" title="map" marginheight="0" marginwidth="0" scrolling="no" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3402.7605317111615!2d74.33999707463336!3d31.47577294934589!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3919042715f767ad%3A0xb0251034ce47145e!2sARFA%20Tower%2C%20Lahore%20%E2%80%93%20Kasur%20Rd%2C%20Nishtar%20Town%2C%20Lahore%2C%20Punjab%2C%20Pakistan!5e0!3m2!1sen!2s!4v1729336420706!5m2!1sen!2s" style="filter: grayscale(1) contrast(1.2) opacity(0.4);"></iframe>
+            <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3402.7605317111615!2d74.33999707463336!3d31.47577294934589!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3919042715f767ad%3A0xb0251034ce47145e!2sARFA%20Tower%2C%20Lahore%20%E2%80%93%20Kasur%20Rd%2C%20Nishtar%20Town%2C%20Lahore%2C%20Punjab%2C%20Pakistan!5e0!3m2!1sen!2s!4v1729336420706!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> -->
+            <div class="bg-white relative flex flex-wrap py-6 rounded shadow-md">
+              <div class="lg:w-1/2 px-6">
+                <h2 class="title-font font-semibold text-gray-900 tracking-widest text-xs">ADDRESS</h2>
+                <p class="mt-1">Photo booth tattooed prism, portland taiyaki hoodie neutra typewriter</p>
+              </div>
+              <div class="lg:w-1/2 px-6 mt-4 lg:mt-0">
+                <h2 class="title-font font-semibold text-gray-900 tracking-widest text-xs">EMAIL</h2>
+                <a class="text-indigo-500 leading-relaxed">riftedge@email.com</a>
+                <h2 class="title-font font-semibold text-gray-900 tracking-widest text-xs mt-4">PHONE</h2>
+                <p class="leading-relaxed">123-456-7890</p>
+              </div>
+            </div>
+          </div>
+          <div class="lg:w-1/3 md:w-1/2 bg-white flex flex-col md:ml-auto w-full md:py-8 mt-8 md:mt-0">
+            <h2 class="text-gray-900 text-lg mb-1 font-medium title-font">Feedback</h2>
+            <p class="leading-relaxed mb-5 text-gray-600">Post-ironic portland shabby chic echo park, banjo fashion axe</p>
+            <div class="relative mb-4">
+              <label for="name" class="leading-7 text-sm text-gray-600">Name</label>
+              <input type="text" id="name" name="name" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+            </div>
+            <div class="relative mb-4">
+              <label for="email" class="leading-7 text-sm text-gray-600">Email</label>
+              <input type="email" id="email" name="email" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+            </div>
+            <div class="relative mb-4">
+              <label for="message" class="leading-7 text-sm text-gray-600">Message</label>
+              <textarea id="message" name="message" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"></textarea>
+            </div>
+            <button class="text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Button</button>
+            <p class="text-xs text-gray-500 mt-3">Chicharrones blog helvetica normcore iceland tousled brook viral artisan.</p>
+          </div>
+        </div>
+      </section>
+
+
+      
+      <style>.carousel-cell {
+        width: 150px;
+        height: 150px;
+        
+        margin-right: 24px;
+        counter-increment: carousel-cell;
+        }
+        
+        .carousel-cell:before {
+        display: block;
+        width: 20%;
+        }
+        
+        .flickity-slider {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: -260px !important;
+        }
+        
+        .flickity-button {
+        position: absolute !important;
+        inset: 0 !important;
+        top: 50% !important;
+        left: 80% !important;
+        background: white;
+        border: 0px;
+        color: #27272a;
+        }
+        
+        .flickity-prev-next-button:hover {
+        background-color: #27272a;
+        color: white;
+        }
+        
+        .flickity-prev-next-button.previous {
+        visibility: hidden;
+        }
+        
+        .flickity-prev-next-button.next {
+        margin-left: 50px;
+        width: 48px;
+        height: 48px;
+        visibility: hidden;
+        }
+        
+        .flickity-enabled.is-draggable .flickity-viewport {
+        cursor: none;
+        cursor: default;
+        }
+        
+        .flickity-prev-next-button .flickity-button-icon {
+        margin-left: 2px;
+        margin-top: 2px;
+        width: 24px;
+        height: 24px;
+        }
+        </style>
+        <script>let menu = document.getElementById("menu");
+        let closeIcon = document.getElementById("closeIcon");
+        let openIcon = document.getElementById("openIcon");
+        const showMenu = (flag) => {
+        if (flag) {
+        menu.classList.toggle("hidden");
+        closeIcon.classList.toggle("hidden");
+        openIcon.classList.toggle("hidden");
+        }
+        };
+        
+        let menu2 = document.getElementById("menu2");
+        let closeIcon2 = document.getElementById("closeIcon2");
+        let openIcon2 = document.getElementById("openIcon2");
+        const showMenu2 = (flag) => {
+        if (flag) {
+        menu2.classList.toggle("hidden");
+        closeIcon2.classList.toggle("hidden");
+        openIcon2.classList.toggle("hidden");
+        }
+        };
+        </script>
+      
+
+{%endblock%}
+
+      <footer class="text-gray-600 body-font">
+        <div class="container px-5 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
+          <div class="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
+            <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+              </svg>
+              <span class="ml-3 text-xl">RiftEdge</span>
+            </a>
+            <p class="mt-2 text-sm text-gray-500">Air plant banjo lyft occupy retro adaptogen indego</p>
+          </div>
+          <div class="flex-grow flex flex-wrap md:pl-20 -mb-10 md:mt-0 mt-10 md:text-left text-center">
+            <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+              <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">CATEGORIES</h2>
+              <nav class="list-none mb-10">
+                <li>
+                  <a class="text-gray-600 hover:text-gray-800">First Link</a>
+                </li>
+                <li>
+                  <a class="text-gray-600 hover:text-gray-800">Second Link</a>
+                </li>
+                <li>
+                  <a class="text-gray-600 hover:text-gray-800">Third Link</a>
+                </li>
+                <li>
+                  <a class="text-gray-600 hover:text-gray-800">Fourth Link</a>
+                </li>
+              </nav>
+            </div>
+            <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+              <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">CATEGORIES</h2>
+              <nav class="list-none mb-10">
+                <li>
+                  <a class="text-gray-600 hover:text-gray-800">First Link</a>
+                </li>
+                <li>
+                  <a class="text-gray-600 hover:text-gray-800">Second Link</a>
+                </li>
+                <li>
+                  <a class="text-gray-600 hover:text-gray-800">Third Link</a>
+                </li>
+                <li>
+                  <a class="text-gray-600 hover:text-gray-800">Fourth Link</a>
+                </li>
+              </nav>
+            </div>
+            <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+              <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">CATEGORIES</h2>
+              <nav class="list-none mb-10">
+                <li>
+                  <a class="text-gray-600 hover:text-gray-800">First Link</a>
+                </li>
+                <li>
+                  <a class="text-gray-600 hover:text-gray-800">Second Link</a>
+                </li>
+                <li>
+                  <a class="text-gray-600 hover:text-gray-800">Third Link</a>
+                </li>
+                <li>
+                  <a class="text-gray-600 hover:text-gray-800">Fourth Link</a>
+                </li>
+              </nav>
+            </div>
+            <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+              <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">CATEGORIES</h2>
+              <nav class="list-none mb-10">
+                <li>
+                  <a class="text-gray-600 hover:text-gray-800">First Link</a>
+                </li>
+                <li>
+                  <a class="text-gray-600 hover:text-gray-800">Second Link</a>
+                </li>
+                <li>
+                  <a class="text-gray-600 hover:text-gray-800">Third Link</a>
+                </li>
+                <li>
+                  <a class="text-gray-600 hover:text-gray-800">Fourth Link</a>
+                </li>
+              </nav>
+            </div>
+          </div>
+        </div>
+        <div class="bg-gray-100">
+          <div class="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
+            <p class="text-gray-500 text-sm text-center sm:text-left">© 2020 Tailblocks —
+              <a href="https://twitter.com/knyttneve" rel="noopener noreferrer" class="text-gray-600 ml-1" target="_blank">@knyttneve</a>
+            </p>
+            <span class="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
+              <a class="text-gray-500">
+                <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                  <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                </svg>
+              </a>
+              <a class="ml-3 text-gray-500">
+                <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                  <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+                </svg>
+              </a>
+              <a class="ml-3 text-gray-500">
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                  <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+                </svg>
+              </a>
+              <a class="ml-3 text-gray-500">
+                <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
+                  <path stroke="none" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
+                  <circle cx="4" cy="4" r="2" stroke="none"></circle>
+                </svg>
+              </a>
+            </span>
+          </div>
+        </div>
+      </footer>
+
+
+</body>
+</html>
